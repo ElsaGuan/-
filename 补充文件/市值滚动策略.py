@@ -76,17 +76,13 @@ def get_stocks(stock_list, context):
 # 将回测的quantile参数作为输入参数
 # 以获得不同quantile下的回测结果
 def rebalance(context, holding_list, start_q, end_q, total_number):
-    # if end_q == 100:
-    #     end_q = 100
     
-    # 空仓只有买入操作
     stocks = holding_list[start_q * total_number / 100 : end_q * total_number / 100]
-    print(stocks)
     # 每只股票购买金额
     every_stock = context.portfolio.portfolio_value/len(stocks)
     
+    # 空仓只有买入操作
     if len(list(context.portfolio.positions.keys()))==0:
-        # 原设定重scort始于回报率相关打分计算，回报率是升序排列
         for stock_to_buy in stocks: 
             order_target_value(stock_to_buy, every_stock)
     else :
