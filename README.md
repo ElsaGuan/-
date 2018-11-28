@@ -10,6 +10,8 @@ Part 2. 不同流通市值股票的表现对比 --> 市值参数回测.ipynb
 
 Part 3. 策略测试 --> 策略测试结果.ipynb
 
+回测平台：聚宽
+
 jupyter notebook加载不出来的时候，可以用 http://nbviewer.jupyter.org/ 查看
 
 
